@@ -1,0 +1,12 @@
+# Temporarily ignore large uncompressed images
+# These need to be compressed before pushing
+images/RS2.jpeg
+images/RS3.jpeg
+images/RS4.jpeg
+images/RS5.jpeg
+
+# Keep compressed versions
+!images/RS2-compressed.jpeg
+!images/RS3-compressed.jpeg
+!images/RS4-compressed.jpeg
+!images/RS5-compressed.jpeg
