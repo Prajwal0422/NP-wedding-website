@@ -216,27 +216,6 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-12 text-center" style="margin-top:40px; clear:both;">
-								<div class="event-wrap animate-box traditional-event-card">
-									<div class="event-icon">🎊</div>
-									<h3>Reception</h3>
-									<div class="rangoli-divider">───  ❋  ───</div>
-									<div class="event-col">
-										<i class="icon-calendar"></i>
-										<span id="receptionDate">22 February 2026</span>
-									</div>
-									<div class="event-col">
-										<i class="icon-clock"></i>
-										<span id="receptionTime">11:00 AM Onwards</span>
-									</div>
-									<p class="venue-details">At <b id="receptionVenue">Grand Palace Convention Hall</b><br>Join us for a day of celebration</p>
-									<p class="venue-address" id="receptionAddress">MG Road, Shimoga, Karnataka – 577201</p>
-									<button class="btn btn-sm calendar-btn" onclick="addToCalendar('reception')">📅 Add to Calendar</button>
-									<div id="receptionMapContainer" style="margin-top:15px;">
-										<p style="color:#999; font-size:14px; font-style:italic;">Map will be updated with final venue</p>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -577,8 +556,6 @@
 			overflow: visible !important;
 			list-style: none !important;
 			position: relative !important;
-			top: auto !important;
-			left: auto !important;
 		}
 
 		#fh5co-gallery-list li {
@@ -593,7 +570,6 @@
 			background: none !important;
 			overflow: hidden;
 			border-radius: 12px;
-			top: auto !important;
 		}
 
 		#fh5co-gallery-list li a {
@@ -644,7 +620,6 @@
 			display: block;
 			clear: both;
 			position: relative;
-			z-index: 10;
 		}
 
 		.map-wrapper iframe {
@@ -656,7 +631,6 @@
 			display: block;
 			margin: 0 auto;
 			position: relative;
-			z-index: 10;
 		}
 
 		/* Event Cards - Proper spacing */
@@ -665,12 +639,10 @@
 			display: block;
 			width: 100%;
 			position: relative;
-			z-index: 10;
 		}
 
 		.event-wrap {
 			position: relative;
-			z-index: 10;
 		}
 
 		/* Clear floats after sections */
@@ -681,18 +653,19 @@
 			width: 100%;
 			clear: both;
 			position: relative;
-			z-index: auto;
 		}
 
 		/* Gallery specific - ensure proper placement */
 		#fh5co-gallery {
 			background: rgba(0, 0, 0, 0.04) !important;
 			background-image: none !important;
-			margin-top: 0 !important;
+			margin-top: 80px !important;
 			padding-top: 80px !important;
 			padding-bottom: 80px !important;
 			position: relative !important;
-			z-index: 1 !important;
+			z-index: 5 !important;
+			display: block !important;
+			clear: both !important;
 		}
 
 		#fh5co-event::after,
