@@ -88,6 +88,7 @@
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
+							<div class="floral-border-top" style="margin-top: 40px; margin-bottom: 30px;">✿ ✿ ✿</div>
 							<div class="wedding-invitation-header">
 								<div class="floral-divider">✿</div>
 								<h3 class="invitation-title">Wedding Invitation</h3>
@@ -248,7 +249,6 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<div class="floral-border">✿ ✿ ✿</div>
 					<h2>Gallery</h2>
 					<p>Cherished moments & beautiful memories</p>
 				</div>
@@ -799,6 +799,25 @@
 			font-size: 28px;
 			margin: 15px 0;
 			letter-spacing: 20px;
+		}
+
+		.floral-border-top {
+			color: var(--temple-gold);
+			font-size: 32px;
+			letter-spacing: 25px;
+			text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+			animation: fadeInDown 1s ease-in-out;
+		}
+
+		@keyframes fadeInDown {
+			from {
+				opacity: 0;
+				transform: translateY(-20px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
 		}
 
 		.couple-names {
