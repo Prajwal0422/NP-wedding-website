@@ -244,7 +244,7 @@
 	</div>
 
 
-	<div id="fh5co-gallery" class="fh5co-section-gray" style="padding-top: 80px; padding-bottom: 80px; clear: both;">
+	<div id="fh5co-gallery" class="fh5co-section-gray" style="padding: 80px 0; clear: both; display: block; width: 100%;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
@@ -253,9 +253,9 @@
 					<p>Cherished moments & beautiful memories</p>
 				</div>
 			</div>
-			<div class="row row-bottom-padded-md">
+			<div class="row row-bottom-padded-md" style="clear: both;">
 				<div class="col-md-12">
-					<ul id="fh5co-gallery-list" style="display: block; width: 100%; padding: 0; margin: 0;">
+					<ul id="fh5co-gallery-list">
 						
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/RS2.jpeg);"> 
 						<a href="images/RS2.jpeg" class="gallery-item">
@@ -573,22 +573,28 @@
 			z-index: auto;
 		}
 
-		/* Gallery List - Fix flexbox overlap */
+		/* Gallery List - FIXED: Modern Grid Layout */
 		#fh5co-gallery-list {
-			display: block !important;
+			display: grid !important;
+			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+			gap: 25px !important;
 			width: 100% !important;
-			padding: 0;
-			margin: 0;
-			clear: both;
-			overflow: hidden;
+			padding: 0 !important;
+			margin: 40px 0 0 0 !important;
+			clear: both !important;
+			overflow: visible !important;
+			list-style: none !important;
 		}
 
 		#fh5co-gallery-list li {
 			position: relative !important;
-			float: left;
-			display: block;
-			margin: 0 0 10px 1%;
-			min-height: 400px;
+			float: none !important;
+			display: block !important;
+			margin: 0 !important;
+			min-height: 350px !important;
+			height: 350px !important;
+			width: 100% !important;
+			list-style: none !important;
 		}
 
 		#fh5co-gallery-list li a {
@@ -596,7 +602,9 @@
 			display: block;
 			width: 100%;
 			height: 100%;
-			min-height: 400px;
+			min-height: 350px;
+			overflow: hidden;
+			border-radius: 12px;
 		}
 
 		#fh5co-gallery-list li a:before {
@@ -652,6 +660,16 @@
 		}
 
 		/* Clear floats after sections */
+		#fh5co-event,
+		#fh5co-gallery,
+		#fh5co-rsvp {
+			display: block;
+			width: 100%;
+			clear: both;
+			position: relative;
+			z-index: auto;
+		}
+
 		#fh5co-event::after,
 		#fh5co-gallery::after {
 			content: "";
@@ -662,6 +680,22 @@
 		/* Remove problematic z-index */
 		.fh5co-section-gray {
 			z-index: auto !important;
+			position: relative;
+		}
+
+		/* Section spacing - Prevent overlap */
+		section,
+		#fh5co-event,
+		#fh5co-gallery,
+		#fh5co-rsvp,
+		#fh5co-couple,
+		#fh5co-services {
+			padding: 80px 20px;
+			margin-bottom: 0;
+			position: relative;
+			display: block;
+			width: 100%;
+			clear: both;
 		}
 
 		/* Responsive fixes */
@@ -672,9 +706,16 @@
 				padding: 50px 15px;
 			}
 
+			#fh5co-gallery-list {
+				grid-template-columns: repeat(2, 1fr) !important;
+				gap: 15px !important;
+			}
+
 			#fh5co-gallery-list li {
-				width: 49% !important;
-				margin-left: 0.5%;
+				width: 100% !important;
+				margin: 0 !important;
+				height: 300px !important;
+				min-height: 300px !important;
 			}
 
 			.map-wrapper iframe {
@@ -683,9 +724,16 @@
 		}
 
 		@media (max-width: 480px) {
+			#fh5co-gallery-list {
+				grid-template-columns: 1fr !important;
+				gap: 15px !important;
+			}
+
 			#fh5co-gallery-list li {
 				width: 100% !important;
-				margin-left: 0;
+				margin: 0 !important;
+				height: 280px !important;
+				min-height: 280px !important;
 			}
 
 			#fh5co-event,
