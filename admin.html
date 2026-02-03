@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Website Admin Panel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #FEF5E7 0%, #F4E4C1 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+
+        h1 {
+            color: #7B1E1E;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 14px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+            padding: 25px;
+            background: #FEF5E7;
+            border-radius: 10px;
+            border-left: 4px solid #D4AF37;
+        }
+
+        .section h2 {
+            color: #7B1E1E;
+            margin-bottom: 20px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #5D0E0E;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #D4AF37;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .btn {
+            background: #7B1E1E;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: block;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .btn:hover {
+            background: #5D0E0E;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: #D4AF37;
+            margin-top: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: #B8860B;
+        }
+
+        .success-message {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .icon {
+            font-size: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .row {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎊 Wedding Website Admin Panel</h1>
+        <p class="subtitle">Update your wedding details easily</p>
+
+        <div class="success-message" id="successMessage">
+            ✅ Configuration saved successfully! Refresh your website to see changes.
+        </div>
+
+        <form id="adminForm">
+            <!-- Bride Section -->
+            <div class="section">
+                <h2><span class="icon">👰</span> Bride Details</h2>
+                <div class="form-group">
+                    <label for="brideName">Bride's Full Name *</label>
+                    <input type="text" id="brideName" required placeholder="Niveditha Jain">
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="brideFather">Father's Name *</label>
+                        <input type="text" id="brideFather" required placeholder="Mr. Mahesh Jain">
+                    </div>
+                    <div class="form-group">
+                        <label for="brideMother">Mother's Name *</label>
+                        <input type="text" id="brideMother" required placeholder="Mrs. Sunitha Jain">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="brideCity">City *</label>
+                    <input type="text" id="brideCity" required placeholder="Bangalore, Karnataka">
+                </div>
+            </div>
+
+            <!-- Groom Section -->
+            <div class="section">
+                <h2><span class="icon">🤵</span> Groom Details</h2>
+                <div class="form-group">
+                    <label for="groomName">Groom's Full Name *</label>
+                    <input type="text" id="groomName" required placeholder="Preetham J S">
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="groomFather">Father's Name *</label>
+                        <input type="text" id="groomFather" required placeholder="Mr. Jagadish S">
+                    </div>
+                    <div class="form-group">
+                        <label for="groomMother">Mother's Name *</label>
+                        <input type="text" id="groomMother" required placeholder="Mrs. Shashikala J">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="groomCity">City *</label>
+                    <input type="text" id="groomCity" required placeholder="Shimoga, Karnataka">
+                </div>
+            </div>
+
+            <!-- Betrothal Event -->
+            <div class="section">
+                <h2><span class="icon">🕉️</span> Betrothal Ceremony</h2>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="betrothalDate">Date *</label>
+                        <input type="text" id="betrothalDate" required placeholder="19 February 2026">
+                    </div>
+                    <div class="form-group">
+                        <label for="betrothalTime">Time *</label>
+                        <input type="text" id="betrothalTime" required placeholder="8:00 AM">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="betrothalVenue">Venue Name *</label>
+                    <input type="text" id="betrothalVenue" required placeholder="Sri Chowdeshwari Mahalasa Temple">
+                </div>
+                <div class="form-group">
+                    <label for="betrothalAddress">Complete Address *</label>
+                    <textarea id="betrothalAddress" rows="2" required placeholder="B.H Road, State Highway 50, Kargal, Karnataka – 577421, Shimoga District"></textarea>
+                </div>
+            </div>
+
+            <!-- Muhurtham Event -->
+            <div class="section">
+                <h2><span class="icon">💒</span> Wedding Muhurtham</h2>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="muhurthamDate">Date *</label>
+                        <input type="text" id="muhurthamDate" required placeholder="20 February 2026">
+                    </div>
+                    <div class="form-group">
+                        <label for="muhurthamTime">Time *</label>
+                        <input type="text" id="muhurthamTime" required placeholder="11:45 AM">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="muhurthamVenue">Venue Name *</label>
+                    <input type="text" id="muhurthamVenue" required placeholder="Sri Chowdeshwari Mahalasa Temple">
+                </div>
+                <div class="form-group">
+                    <label for="muhurthamAddress">Complete Address *</label>
+                    <textarea id="muhurthamAddress" rows="2" required placeholder="B.H Road, State Highway 50, Kargal, Karnataka – 577421, Shimoga District"></textarea>
+                </div>
+            </div>
+
+            <!-- Reception Event -->
+            <div class="section">
+                <h2><span class="icon">🎊</span> Reception</h2>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="receptionDate">Date *</label>
+                        <input type="text" id="receptionDate" required placeholder="22 February 2026">
+                    </div>
+                    <div class="form-group">
+                        <label for="receptionTime">Time *</label>
+                        <input type="text" id="receptionTime" required placeholder="11:00 AM Onwards">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="receptionVenue">Venue Name *</label>
+                    <input type="text" id="receptionVenue" required placeholder="Grand Palace Convention Hall">
+                </div>
+                <div class="form-group">
+                    <label for="receptionAddress">Complete Address *</label>
+                    <textarea id="receptionAddress" rows="2" required placeholder="MG Road, Shimoga, Karnataka – 577201"></textarea>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="section">
+                <h2><span class="icon">📞</span> Contact Information</h2>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="contactPhone">Phone Number *</label>
+                        <input type="tel" id="contactPhone" required placeholder="+91 98765 43210">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address *</label>
+                        <input type="email" id="contactEmail" required placeholder="niveditha.preetham@wedding.com">
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn">💾 Save Configuration</button>
+            <button type="button" class="btn btn-secondary" onclick="downloadConfig()">📥 Download Config File</button>
+        </form>
+    </div>
+
+    <script>
+        // Load existing configuration
+        window.addEventListener('DOMContentLoaded', function() {
+            fetch('config/wedding.json')
+                .then(response => response.json())
+                .then(config => {
+                    loadFormData(config);
+                })
+                .catch(error => {
+                    console.log('No existing config found, using defaults');
+                });
+        });
+
+        function loadFormData(config) {
+            // Bride
+            document.getElementById('brideName').value = config.bride.name;
+            document.getElementById('brideFather').value = config.bride.father;
+            document.getElementById('brideMother').value = config.bride.mother;
+            document.getElementById('brideCity').value = config.bride.city;
+
+            // Groom
+            document.getElementById('groomName').value = config.groom.name;
+            document.getElementById('groomFather').value = config.groom.father;
+            document.getElementById('groomMother').value = config.groom.mother;
+            document.getElementById('groomCity').value = config.groom.city;
+
+            // Events
+            document.getElementById('betrothalDate').value = config.wedding.betrothal.date;
+            document.getElementById('betrothalTime').value = config.wedding.betrothal.time;
+            document.getElementById('betrothalVenue').value = config.wedding.betrothal.venue;
+            document.getElementById('betrothalAddress').value = config.wedding.betrothal.address;
+
+            document.getElementById('muhurthamDate').value = config.wedding.muhurtham.date;
+            document.getElementById('muhurthamTime').value = config.wedding.muhurtham.time;
+            document.getElementById('muhurthamVenue').value = config.wedding.muhurtham.venue;
+            document.getElementById('muhurthamAddress').value = config.wedding.muhurtham.address;
+
+            document.getElementById('receptionDate').value = config.wedding.reception.date;
+            document.getElementById('receptionTime').value = config.wedding.reception.time;
+            document.getElementById('receptionVenue').value = config.wedding.reception.venue;
+            document.getElementById('receptionAddress').value = config.wedding.reception.address;
+
+            // Contact
+            document.getElementById('contactPhone').value = config.contact.phone;
+            document.getElementById('contactEmail').value = config.contact.email;
+        }
+
+        document.getElementById('adminForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const config = {
+                bride: {
+                    name: document.getElementById('brideName').value,
+                    father: document.getElementById('brideFather').value,
+                    mother: document.getElementById('brideMother').value,
+                    city: document.getElementById('brideCity').value
+                },
+                groom: {
+                    name: document.getElementById('groomName').value,
+                    father: document.getElementById('groomFather').value,
+                    mother: document.getElementById('groomMother').value,
+                    city: document.getElementById('groomCity').value
+                },
+                wedding: {
+                    muhurtham: {
+                        date: document.getElementById('muhurthamDate').value,
+                        time: document.getElementById('muhurthamTime').value,
+                        venue: document.getElementById('muhurthamVenue').value,
+                        address: document.getElementById('muhurthamAddress').value,
+                        map_query: "Sri+Chowdeshwari+Mahalasa+Temple+Kargal"
+                    },
+                    betrothal: {
+                        date: document.getElementById('betrothalDate').value,
+                        time: document.getElementById('betrothalTime').value,
+                        venue: document.getElementById('betrothalVenue').value,
+                        address: document.getElementById('betrothalAddress').value,
+                        map_query: "Sri+Chowdeshwari+Mahalasa+Temple+Kargal"
+                    },
+                    reception: {
+                        date: document.getElementById('receptionDate').value,
+                        time: document.getElementById('receptionTime').value,
+                        venue: document.getElementById('receptionVenue').value,
+                        address: document.getElementById('receptionAddress').value
+                    }
+                },
+                contact: {
+                    phone: document.getElementById('contactPhone').value,
+                    email: document.getElementById('contactEmail').value
+                },
+                countdown: {
+                    target_date: "2026-02-20 11:45",
+                    timezone: "Asia/Kolkata"
+                }
+            };
+
+            downloadConfig(config);
+        });
+
+        function downloadConfig(config = null) {
+            if (!config) {
+                // Get current form data
+                config = {
+                    bride: {
+                        name: document.getElementById('brideName').value,
+                        father: document.getElementById('brideFather').value,
+                        mother: document.getElementById('brideMother').value,
+                        city: document.getElementById('brideCity').value
+                    },
+                    groom: {
+                        name: document.getElementById('groomName').value,
+                        father: document.getElementById('groomFather').value,
+                        mother: document.getElementById('groomMother').value,
+                        city: document.getElementById('groomCity').value
+                    },
+                    wedding: {
+                        muhurtham: {
+                            date: document.getElementById('muhurthamDate').value,
+                            time: document.getElementById('muhurthamTime').value,
+                            venue: document.getElementById('muhurthamVenue').value,
+                            address: document.getElementById('muhurthamAddress').value,
+                            map_query: "Sri+Chowdeshwari+Mahalasa+Temple+Kargal"
+                        },
+                        betrothal: {
+                            date: document.getElementById('betrothalDate').value,
+                            time: document.getElementById('betrothalTime').value,
+                            venue: document.getElementById('betrothalVenue').value,
+                            address: document.getElementById('betrothalAddress').value,
+                            map_query: "Sri+Chowdeshwari+Mahalasa+Temple+Kargal"
+                        },
+                        reception: {
+                            date: document.getElementById('receptionDate').value,
+                            time: document.getElementById('receptionTime').value,
+                            venue: document.getElementById('receptionVenue').value,
+                            address: document.getElementById('receptionAddress').value
+                        }
+                    },
+                    contact: {
+                        phone: document.getElementById('contactPhone').value,
+                        email: document.getElementById('contactEmail').value
+                    },
+                    countdown: {
+                        target_date: "2026-02-20 11:45",
+                        timezone: "Asia/Kolkata"
+                    }
+                };
+            }
+
+            const dataStr = JSON.stringify(config, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'wedding.json';
+            link.click();
+
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+
+            alert('✅ Configuration file downloaded!\n\nNext steps:\n1. Replace config/wedding.json with the downloaded file\n2. Commit and push to GitHub\n3. Your website will update automatically!');
+        }
+    </script>
+</body>
+</html>

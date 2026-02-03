@@ -1,0 +1,44 @@
+{
+  "bride": {
+    "name": "Niveditha Jain",
+    "father": "Mr. [Father's Name]",
+    "mother": "Mrs. [Mother's Name]",
+    "city": "Bangalore, Karnataka"
+  },
+  "groom": {
+    "name": "Preetham J S",
+    "father": "Mr. [Father's Name]",
+    "mother": "Mrs. [Mother's Name]",
+    "city": "Shimoga, Karnataka"
+  },
+  "wedding": {
+    "muhurtham": {
+      "date": "20 February 2026",
+      "time": "11:45 AM",
+      "venue": "Sri Chowdeshwari Mahalasa Temple",
+      "address": "B.H Road, State Highway 50, Kargal, Karnataka – 577421, Shimoga District",
+      "map_query": "Sri+Chowdeshwari+Mahalasa+Temple+Kargal"
+    },
+    "betrothal": {
+      "date": "19 February 2026",
+      "time": "8:00 AM",
+      "venue": "Sri Chowdeshwari Mahalasa Temple",
+      "address": "B.H Road, State Highway 50, Kargal, Karnataka – 577421, Shimoga District",
+      "map_query": "Sri+Chowdeshwari+Mahalasa+Temple+Kargal"
+    },
+    "reception": {
+      "date": "22 February 2026",
+      "time": "11:00 AM Onwards",
+      "venue": "Reception Hall (To be updated)",
+      "address": "Address to be updated"
+    }
+  },
+  "contact": {
+    "phone": "+91 [Phone Number]",
+    "email": "contact@wedding.com"
+  },
+  "countdown": {
+    "target_date": "2026-02-20 11:45",
+    "timezone": "Asia/Kolkata"
+  }
+}

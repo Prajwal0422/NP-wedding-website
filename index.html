@@ -127,30 +127,30 @@
 				<div class="col-md-5 col-md-offset-1 text-center animate-box">
 					<div class="couple-card">
 						<div class="couple-photo-frame">
-							<img src="images/RS3.jpeg" alt="Groom" class="img-responsive couple-photo">
+							<img src="images/RS3.jpeg" alt="Preetham J S - Groom" class="img-responsive couple-photo">
 						</div>
-						<h3 class="couple-name">Preetham J S</h3>
+						<h3 class="couple-name" id="groomName">Preetham J S</h3>
 						<p class="couple-title">The Groom</p>
 						<div class="couple-details">
 							<p><strong>Son of</strong></p>
-							<p>Mr. [UPDATE_FATHER_NAME] & Mrs. [UPDATE_MOTHER_NAME]</p>
+							<p id="groomParents">Mr. Jagadish S & Mrs. Shashikala J</p>
 							<p><strong>From</strong></p>
-							<p>[CITY]</p>
+							<p id="groomCity">Shimoga, Karnataka</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-5 text-center animate-box">
 					<div class="couple-card">
 						<div class="couple-photo-frame">
-							<img src="images/RS4.jpeg" alt="Bride" class="img-responsive couple-photo">
+							<img src="images/RS4.jpeg" alt="Niveditha Jain - Bride" class="img-responsive couple-photo">
 						</div>
-						<h3 class="couple-name">Niveditha Jain</h3>
+						<h3 class="couple-name" id="brideName">Niveditha Jain</h3>
 						<p class="couple-title">The Bride</p>
 						<div class="couple-details">
 							<p><strong>Daughter of</strong></p>
-							<p>Mr. [UPDATE_FATHER_NAME] & Mrs. [UPDATE_MOTHER_NAME]</p>
+							<p id="brideParents">Mr. Mahesh Jain & Mrs. Sunitha Jain</p>
 							<p><strong>From</strong></p>
-							<p>[CITY]</p>
+							<p id="brideCity">Bangalore, Karnataka</p>
 						</div>
 					</div>
 				</div>
@@ -180,16 +180,16 @@
 									<div class="rangoli-divider">───  ❋  ───</div>
 									<div class="event-col">
 										<i class="icon-calendar"></i>
-										<span>19 February 2026</span>
+										<span id="betrothalDate">19 February 2026</span>
 									</div>
 									<div class="event-col">
 										<i class="icon-clock"></i>
-										<span>8:00 AM</span>
+										<span id="betrothalTime">8:00 AM</span>
 									</div>
-									<p class="venue-details">At <b>Sri Chowdeshwari Mahalasa Temple, Kargal</b><br>Followed by traditional breakfast</p>
-									<p class="venue-address">B.H Road, State Highway 50, Kargal, Karnataka – 577421</p>
-									<button class="btn btn-sm calendar-btn">📅 Add to Calendar</button>
-									<iframe src="https://maps.google.com/?q=Sri+Chowdeshwari+Mahalasa+Temple+Kargal&output=embed" width="300" height="200" style="border:0; border-radius:10px; margin-top:15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+									<p class="venue-details">At <b id="betrothalVenue">Sri Chowdeshwari Mahalasa Temple, Kargal</b><br>Followed by traditional breakfast</p>
+									<p class="venue-address" id="betrothalAddress">B.H Road, State Highway 50, Kargal, Karnataka – 577421, Shimoga District</p>
+									<button class="btn btn-sm calendar-btn" onclick="addToCalendar('betrothal')">📅 Add to Calendar</button>
+									<iframe src="https://maps.google.com/?q=Sri+Chowdeshwari+Mahalasa+Temple+Kargal&output=embed" width="100%" height="250" style="border:0; border-radius:10px; margin-top:15px; max-width:400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-6 text-center">
@@ -199,16 +199,16 @@
 									<div class="rangoli-divider">───  ❋  ───</div>
 									<div class="event-col">
 										<i class="icon-calendar"></i>
-										<span>20 February 2026</span>
+										<span id="muhurthamDate">20 February 2026</span>
 									</div>
 									<div class="event-col">
 										<i class="icon-clock"></i>
-										<span>11:45 AM</span>
+										<span id="muhurthamTime">11:45 AM</span>
 									</div>
-									<p class="venue-details">At <b>Sri Chowdeshwari Mahalasa Temple, Kargal</b><br>Followed by lunch and blessings</p>
-									<p class="venue-address">B.H Road, State Highway 50, Kargal, Karnataka – 577421</p>
-									<button class="btn btn-sm calendar-btn">📅 Add to Calendar</button>
-									<iframe src="https://maps.google.com/?q=Sri+Chowdeshwari+Mahalasa+Temple+Kargal&output=embed" width="300" height="200" style="border:0; border-radius:10px; margin-top:15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+									<p class="venue-details">At <b id="muhurthamVenue">Sri Chowdeshwari Mahalasa Temple, Kargal</b><br>Followed by lunch and blessings</p>
+									<p class="venue-address" id="muhurthamAddress">B.H Road, State Highway 50, Kargal, Karnataka – 577421, Shimoga District</p>
+									<button class="btn btn-sm calendar-btn" onclick="addToCalendar('muhurtham')">📅 Add to Calendar</button>
+									<iframe src="https://maps.google.com/?q=Sri+Chowdeshwari+Mahalasa+Temple+Kargal&output=embed" width="100%" height="250" style="border:0; border-radius:10px; margin-top:15px; max-width:400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 								</div>
 							</div>
 							<div class="col-md-12 text-center" style="margin-top:40px;">
@@ -218,15 +218,18 @@
 									<div class="rangoli-divider">───  ❋  ───</div>
 									<div class="event-col">
 										<i class="icon-calendar"></i>
-										<span>22 February 2026</span>
+										<span id="receptionDate">22 February 2026</span>
 									</div>
 									<div class="event-col">
 										<i class="icon-clock"></i>
-										<span>11:00 AM Onwards</span>
+										<span id="receptionTime">11:00 AM Onwards</span>
 									</div>
-									<p class="venue-details">At <b>[RECEPTION_HALL_NAME]</b><br>Join us for an evening of celebration</p>
-									<p class="venue-address">[COMPLETE_ADDRESS]</p>
-									<button class="btn btn-sm calendar-btn">📅 Add to Calendar</button>
+									<p class="venue-details">At <b id="receptionVenue">Grand Palace Convention Hall</b><br>Join us for a day of celebration</p>
+									<p class="venue-address" id="receptionAddress">MG Road, Shimoga, Karnataka – 577201</p>
+									<button class="btn btn-sm calendar-btn" onclick="addToCalendar('reception')">📅 Add to Calendar</button>
+									<div id="receptionMapContainer" style="margin-top:15px;">
+										<p style="color:#999; font-size:14px; font-style:italic;">Map will be updated with final venue</p>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -384,8 +387,7 @@
 							<div class="icon-circle">🙏</div>
 							<h4>With Blessings From</h4>
 							<p><strong>Bride's Parents</strong><br>
-							Mr. [UPDATE_FATHER_NAME]<br>
-							Mrs. [UPDATE_MOTHER_NAME]</p>
+							<span id="blessingBrideParents">Mr. Mahesh Jain<br>Mrs. Sunitha Jain</span></p>
 						</div>
 					</div>
 					<div class="col-md-4 text-center animate-box">
@@ -393,8 +395,7 @@
 							<div class="icon-circle">🙏</div>
 							<h4>With Blessings From</h4>
 							<p><strong>Groom's Parents</strong><br>
-							Mr. [UPDATE_FATHER_NAME]<br>
-							Mrs. [UPDATE_MOTHER_NAME]</p>
+							<span id="blessingGroomParents">Mr. Jagadish S<br>Mrs. Shashikala J</span></p>
 						</div>
 					</div>
 					<div class="col-md-4 text-center animate-box">
@@ -402,8 +403,8 @@
 							<div class="icon-circle">💐</div>
 							<h4>Contact Us</h4>
 							<p><strong>For queries:</strong><br>
-							📞 +91 XXXXXXXXXX<br>
-							📧 contact@wedding.com</p>
+							📞 <span id="contactPhone">+91 98765 43210</span><br>
+							📧 <span id="contactEmail">niveditha.preetham@wedding.com</span></p>
 						</div>
 					</div>
 				</div>
@@ -897,6 +898,167 @@
 	</style>
 	
 		<script>
+			// Load wedding configuration
+			let weddingConfig = null;
+
+			// Fetch config file
+			fetch('config/wedding.json')
+				.then(response => response.json())
+				.then(config => {
+					weddingConfig = config;
+					loadWeddingData(config);
+				})
+				.catch(error => {
+					console.log('Using default configuration');
+					// Use default values if config file not found
+					weddingConfig = getDefaultConfig();
+					loadWeddingData(weddingConfig);
+				});
+
+			// Default configuration
+			function getDefaultConfig() {
+				return {
+					"bride": {
+						"name": "Niveditha Jain",
+						"father": "Mr. Mahesh Jain",
+						"mother": "Mrs. Sunitha Jain",
+						"city": "Bangalore, Karnataka"
+					},
+					"groom": {
+						"name": "Preetham J S",
+						"father": "Mr. Jagadish S",
+						"mother": "Mrs. Shashikala J",
+						"city": "Shimoga, Karnataka"
+					},
+					"wedding": {
+						"muhurtham": {
+							"date": "20 February 2026",
+							"time": "11:45 AM",
+							"venue": "Sri Chowdeshwari Mahalasa Temple",
+							"address": "B.H Road, State Highway 50, Kargal, Karnataka – 577421, Shimoga District"
+						},
+						"betrothal": {
+							"date": "19 February 2026",
+							"time": "8:00 AM",
+							"venue": "Sri Chowdeshwari Mahalasa Temple",
+							"address": "B.H Road, State Highway 50, Kargal, Karnataka – 577421, Shimoga District"
+						},
+						"reception": {
+							"date": "22 February 2026",
+							"time": "11:00 AM Onwards",
+							"venue": "Grand Palace Convention Hall",
+							"address": "MG Road, Shimoga, Karnataka – 577201"
+						}
+					},
+					"contact": {
+						"phone": "+91 98765 43210",
+						"email": "niveditha.preetham@wedding.com"
+					}
+				};
+			}
+
+			// Load data into HTML
+			function loadWeddingData(config) {
+				// Update couple names
+				const coupleNameElements = document.querySelectorAll('.couple-names');
+				coupleNameElements.forEach(el => {
+					el.innerHTML = `${config.bride.name} <span class="ampersand">❤️</span> ${config.groom.name}`;
+				});
+
+				// Update groom details
+				if (document.getElementById('groomName')) {
+					document.getElementById('groomName').textContent = config.groom.name || 'Groom Name';
+				}
+				if (document.getElementById('groomParents')) {
+					document.getElementById('groomParents').textContent = 
+						`${config.groom.father} & ${config.groom.mother}`;
+				}
+				if (document.getElementById('groomCity')) {
+					document.getElementById('groomCity').textContent = config.groom.city || 'City';
+				}
+
+				// Update bride details
+				if (document.getElementById('brideName')) {
+					document.getElementById('brideName').textContent = config.bride.name || 'Bride Name';
+				}
+				if (document.getElementById('brideParents')) {
+					document.getElementById('brideParents').textContent = 
+						`${config.bride.father} & ${config.bride.mother}`;
+				}
+				if (document.getElementById('brideCity')) {
+					document.getElementById('brideCity').textContent = config.bride.city || 'City';
+				}
+
+				// Update blessing section
+				if (document.getElementById('blessingBrideParents')) {
+					document.getElementById('blessingBrideParents').innerHTML = 
+						`${config.bride.father}<br>${config.bride.mother}`;
+				}
+				if (document.getElementById('blessingGroomParents')) {
+					document.getElementById('blessingGroomParents').innerHTML = 
+						`${config.groom.father}<br>${config.groom.mother}`;
+				}
+
+				// Update contact info
+				if (document.getElementById('contactPhone')) {
+					document.getElementById('contactPhone').textContent = config.contact.phone;
+				}
+				if (document.getElementById('contactEmail')) {
+					document.getElementById('contactEmail').textContent = config.contact.email;
+				}
+
+				// Update event details
+				updateEventDetails('betrothal', config.wedding.betrothal);
+				updateEventDetails('muhurtham', config.wedding.muhurtham);
+				updateEventDetails('reception', config.wedding.reception);
+			}
+
+			// Update event details
+			function updateEventDetails(eventType, eventData) {
+				const dateEl = document.getElementById(`${eventType}Date`);
+				const timeEl = document.getElementById(`${eventType}Time`);
+				const venueEl = document.getElementById(`${eventType}Venue`);
+				const addressEl = document.getElementById(`${eventType}Address`);
+
+				if (dateEl) dateEl.textContent = eventData.date;
+				if (timeEl) timeEl.textContent = eventData.time;
+				if (venueEl) venueEl.textContent = eventData.venue;
+				if (addressEl) addressEl.textContent = eventData.address;
+			}
+
+			// Add to Calendar functionality
+			function addToCalendar(eventType) {
+				if (!weddingConfig) {
+					alert('Loading event details...');
+					return;
+				}
+
+				const events = {
+					'betrothal': weddingConfig.wedding.betrothal,
+					'muhurtham': weddingConfig.wedding.muhurtham,
+					'reception': weddingConfig.wedding.reception
+				};
+
+				const event = events[eventType];
+				if (!event) return;
+
+				// Create Google Calendar URL
+				const title = `${eventType.charAt(0).toUpperCase() + eventType.slice(1)} - ${weddingConfig.bride.name} & ${weddingConfig.groom.name}`;
+				const location = `${event.venue}, ${event.address}`;
+				const details = `Join us for the ${eventType} ceremony`;
+				
+				// Parse date and time
+				const dateStr = event.date.replace(/(\d+)(st|nd|rd|th)/, '$1');
+				const eventDate = new Date(dateStr + ' ' + event.time);
+				
+				// Format for Google Calendar
+				const startDate = eventDate.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+				
+				const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}/${startDate}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
+				
+				window.open(calendarUrl, '_blank');
+			}
+
 			// Flower Petal Animation
 			function createPetal() {
 				const petal = document.createElement('div');
@@ -929,42 +1091,35 @@
 				}
 			}
 
-			// Bell chime on load (optional - can be enabled)
-			window.addEventListener('load', function() {
-				// Uncomment to play bell sound on load
-				// const bellSound = new Audio('assets/bell-chime.mp3');
-				// bellSound.play();
-			});
-
 			// RSVP Form Submission
-			document.getElementById('rsvpForm').addEventListener('submit', function(e) {
-				e.preventDefault();
-				
-				// Show thank you message
-				document.getElementById('rsvpMessage').style.display = 'block';
-				
-				// Reset form after 3 seconds
-				setTimeout(function() {
-					document.getElementById('rsvpForm').reset();
-					document.getElementById('rsvpMessage').style.display = 'none';
-				}, 3000);
-			});
-
-			// Add to Calendar functionality
-			document.querySelectorAll('.calendar-btn').forEach(btn => {
-				btn.addEventListener('click', function() {
-					alert('Calendar integration coming soon! Please mark your calendar manually.');
-				});
+			document.addEventListener('DOMContentLoaded', function() {
+				const rsvpForm = document.getElementById('rsvpForm');
+				if (rsvpForm) {
+					rsvpForm.addEventListener('submit', function(e) {
+						e.preventDefault();
+						
+						// Show thank you message
+						document.getElementById('rsvpMessage').style.display = 'block';
+						
+						// Reset form after 3 seconds
+						setTimeout(function() {
+							rsvpForm.reset();
+							document.getElementById('rsvpMessage').style.display = 'none';
+						}, 3000);
+					});
+				}
 			});
 
 			// Smooth scroll for navigation
-			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-				anchor.addEventListener('click', function (e) {
-					e.preventDefault();
-					const target = document.querySelector(this.getAttribute('href'));
-					if (target) {
-						target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-					}
+			document.addEventListener('DOMContentLoaded', function() {
+				document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+					anchor.addEventListener('click', function (e) {
+						e.preventDefault();
+						const target = document.querySelector(this.getAttribute('href'));
+						if (target) {
+							target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+						}
+					});
 				});
 			});
 		</script>
