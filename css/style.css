@@ -1803,5 +1803,153 @@ form label {
   opacity: 0;
 }
 
+/* ===== GALLERY SECTION FIXES ===== */
+
+/* Gallery Section - Cute standalone section after Couple */
+#fh5co-gallery {
+  margin: 0;
+  padding: 80px 0;
+  background: linear-gradient(135deg, #FFF8DC 0%, #FEF5E7 100%);
+  clear: both;
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#fh5co-gallery::before {
+  content: '✿';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 80px;
+  color: rgba(212, 175, 55, 0.1);
+}
+
+#fh5co-gallery::after {
+  content: '✿';
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 80px;
+  color: rgba(212, 175, 55, 0.1);
+}
+
+/* Show 2 Images per Row - Grid Layout */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto 0;
+  padding: 0 20px;
+}
+
+/* Image Size Control */
+.gallery-grid a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: all 0.4s ease;
+  border: 4px solid #D4AF37;
+}
+
+.gallery-grid a:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gallery-grid a:hover img {
+  transform: scale(1.1);
+}
+
+/* Tablet responsive */
+@media (max-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* RSVP Section - Compact at the end */
+#fh5co-rsvp {
+  clear: both;
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+#fh5co-rsvp .form-control {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+#fh5co-rsvp .form-control:focus {
+  border-color: #D4AF37;
+  box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+}
+
+@media (max-width: 768px) {
+  #fh5co-rsvp .col-sm-6 {
+    margin-bottom: 15px;
+  }
+}
+
+/* TASK 3 - Fix Map Overlapping */
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  margin-bottom: 80px;
+  overflow: hidden;
+  clear: both;
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* TASK 4 - Fix Blessings Overlap */
+#fh5co-services {
+  position: relative;
+  z-index: 1;
+  margin-top: 100px;
+  background: #ffffff;
+  clear: both;
+}
+
+/* TASK 6 - Safe Section Flow */
+section,
+#fh5co-couple,
+#fh5co-gallery,
+#fh5co-event,
+#fh5co-services,
+#fh5co-rsvp {
+  padding: 80px 20px;
+  clear: both;
+  position: relative;
+}
+
 /*# sourceMappingURL=style.css.map */
 
