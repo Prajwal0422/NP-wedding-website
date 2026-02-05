@@ -95,7 +95,7 @@
 								<p class="invitation-subtitle">With the blessings of elders and Almighty, we invite you to celebrate our wedding</p>
 								<div class="floral-divider">✿</div>
 							</div>
-							<h1 class="couple-names"><span class="bride-name">Niveditha Jain</span> <span class="ampersand">&hearts;</span> <span class="groom-name">Preetham J S</span></h1>
+							<h1 class="couple-names"><span class="bride-name"></span>Niveditha Jain</span> <span class="ampersand">&hearts;</span> <span class="groom-name">Preetham J S</span></h1>
 							<br>
 							<div class="rangoli-design">
 								<img src="images/fprint.png" alt="Wedding Symbol" style="max-width:120px; opacity:0.9;">
@@ -121,7 +121,6 @@
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 					<div class="floral-border">✿ ✿ ✿</div>
 					<h2>The Couple</h2>
-					<p class="sanskrit-quote">॥ श्री गणेशाय नमः ॥</p>
 				</div>
 			</div>
 			<div class="row">
@@ -257,54 +256,6 @@
 	</div>
 
 
-	<div id="fh5co-services" class="fh5co-section-gray">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<div class="floral-border">✿ ✿ ✿</div>
-					<h2>Blessings</h2>
-					<p class="sanskrit-blessing">
-						"सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः<br>
-						सर्वे भद्राणि पश्यन्तु मा कश्चिद्दुःखभाग्भवेत्॥"
-					</p>
-					<p style="font-style:italic; color:#666; margin-top:10px;">
-						May all be happy, may all be free from disease,<br>
-						May all experience good fortune, may none suffer
-					</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1">
-					<div class="col-md-4 text-center animate-box">
-						<div class="blessing-card">
-							<div class="icon-circle">🙏</div>
-							<h4>With Blessings From</h4>
-							<p><strong>Bride's Parents</strong><br>
-							<span id="blessingBrideParents">Mr. Mahesh Jain<br>Mrs. Sunitha Jain</span></p>
-						</div>
-					</div>
-					<div class="col-md-4 text-center animate-box">
-						<div class="blessing-card">
-							<div class="icon-circle">🙏</div>
-							<h4>With Blessings From</h4>
-							<p><strong>Groom's Parents</strong><br>
-							<span id="blessingGroomParents">Mr. Jagadish S<br>Mrs. Shashikala J</span></p>
-						</div>
-					</div>
-					<div class="col-md-4 text-center animate-box">
-						<div class="blessing-card">
-							<div class="icon-circle">💐</div>
-							<h4>Contact Us</h4>
-							<p><strong>For queries:</strong><br>
-							📞 <span id="contactPhone">+91 98765 43210</span><br>
-							📧 <span id="contactEmail">niveditha.preetham@wedding.com</span></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<!-- RSVP Section - Compact at the end -->
 	<div id="fh5co-rsvp" style="padding: 50px 0; background: #f9f9f9;">
 		<div class="container">
@@ -385,6 +336,33 @@
 	<script src="js/simplyCountdown.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	
+	<!-- TASK 2 - Wedding Data Binding -->
+	<script src="config/wedding-data.js"></script>
+	<script>
+		// Bind wedding data to HTML elements
+		document.addEventListener('DOMContentLoaded', function() {
+			// Bride name
+			document.querySelectorAll(".bride-name")
+				.forEach(el => el.innerText = weddingData.brideName);
+			
+			// Groom name
+			document.querySelectorAll(".groom-name")
+				.forEach(el => el.innerText = weddingData.groomName);
+			
+			// Bride's parents
+			document.querySelectorAll(".bride-father")
+				.forEach(el => el.innerText = weddingData.brideFather);
+			document.querySelectorAll(".bride-mother")
+				.forEach(el => el.innerText = weddingData.brideMother);
+			
+			// Groom's parents
+			document.querySelectorAll(".groom-father")
+				.forEach(el => el.innerText = weddingData.groomFather);
+			document.querySelectorAll(".groom-mother")
+				.forEach(el => el.innerText = weddingData.groomMother);
+		});
+	</script>
 	
 	<!-- Flower Petal Animation -->
 	<div id="petals-container"></div>
@@ -482,25 +460,23 @@
 
 		/* ===== LAYOUT FIX: PREVENT OVERLAPPING ===== */
 		
-		/* Section Spacing - Proper vertical flow */
+		/* TASK 6 - Safe Section Flow */
+		section,
+		#fh5co-couple,
 		#fh5co-event,
+		#fh5co-gallery,
 		#fh5co-rsvp,
 		#fh5co-services {
 			display: block;
 			width: 100%;
 			clear: both;
-			position: static;
+			position: relative;
 			padding: 80px 20px;
 			margin: 0;
 		}
 
 		/* Gallery Section - Standalone cute section */
 		#fh5co-gallery {
-			display: block !important;
-			width: 100% !important;
-			clear: both !important;
-			position: static !important;
-			margin: 0 !important;
 			padding: 80px 0 !important;
 			overflow: hidden !important;
 		}
@@ -508,19 +484,33 @@
 		/* Event Section - Extra bottom padding */
 		#fh5co-event {
 			padding-bottom: 120px !important;
-			margin-bottom: 0;
 		}
 
-		/* Map Wrapper - Proper containment */
+		/* TASK 3 - Map Wrapper Fix */
 		.map-wrapper {
-			width: 100%;
-			height: auto;
-			margin: 15px 0 20px 0;
-			display: block;
-			clear: both;
 			position: relative;
+			width: 100%;
+			height: 350px;
+			margin-bottom: 80px;
+			overflow: hidden;
+			clear: both;
 		}
 
+		.map-wrapper iframe {
+			width: 100%;
+			height: 100%;
+			border: 0;
+			display: block;
+		}
+
+		/* TASK 4 - Blessings Section Fix */
+		#fh5co-services {
+			position: relative;
+			z-index: 1;
+			margin-top: 100px;
+			background: #ffffff;
+			clear: both;
+		}
 		.map-wrapper iframe {
 			width: 100% !important;
 			max-width: 100% !important;
